@@ -10,15 +10,7 @@ App.Points = function () {
 };
 
 App.Points.prototype.fetch = function(callback) {
-	// $.ajax({
-	// 	url: '../data/points.json',
-	// 	context: this
-	// }).done(function (data) {
-	// 	this.temp = data;
-	// 	this.filter(callback);
-	// });
-
-	// same origin policy fallback
+	// just using global data object for now, workaround for no 'allow-file-access-from-files' in Chrome
 	this.temp = pointsData;
 	this.filter(callback);
 };
